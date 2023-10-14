@@ -6,10 +6,11 @@ const alumns = [
     { name: 'Raquel Benito', T1: true, T2: true, T3: true }
 ];
 
-const ActAlumns = alumns.map(alumn => {
-    const trimestersApproved = [alumn.T1, alumn.T2, alumn.T3].filter(approved => approved);
-    alumn.isApproved = trimestersApproved.length >= 2;
-    return alumn;
-});
+for (let alumn of alumns) {
+    alumn.isApproved =
+        (alumn.T1 && alumn.T2) ||
+        (alumn.T2 && alumn.T3) ||
+        (alumn.T1 && alumn.T3);
+}
 
-console.log(ActAlumns);
+console.log(alumns);
