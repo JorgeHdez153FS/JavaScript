@@ -4,5 +4,6 @@ const alien = {
     planet: 'Eden',
     weight: '259kg'
 }
-for (let especificsAlien in alien);
-console.log(alien);
+for (let aliens in alien) {
+    console.log(aliens + ':' + alien[aliens]);
+}
